@@ -1,4 +1,3 @@
-
 ---
 title: "Bitcoin Hands-On!"
 has_toc: true
