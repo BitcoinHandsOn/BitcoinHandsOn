@@ -4,8 +4,6 @@ has_toc: true
 nav_order: 1
 ---
 
-
-
 Bitcoin
 
 Hands-On!
@@ -34,71 +32,7 @@ This book is intended for educational and informational purposes only. The conte
 
 By reading this book, you accept full responsibility for your actions and acknowledge these risks.
 
-**Contents**
-
-[Introduction 1](#_Toc202777437)
-
-[Exercise 1: Install Sparrow Bitcoin Wallet 5](#_Toc202777438)
-
-[Exercise 2: Create Alice wallet in Sparrow 9](#_Toc202777439)
-
-[Exercise 3: Buy Bitcoin 13](#_Toc202777440)
-
-[Exercise 4: Receive bitcoin into your Alice wallet 17](#_Toc202777441)
-
-[Exercise 5: Recover your Alice wallet 22](#_Toc202777442)
-
-[Exercise 6: Create wallet Bob 24](#_Toc202777443)
-
-[Exercise 7: Your first send—transfer bitcoin from Alice to Bob 26](#_Toc202777444)
-
-[Exercise 8: Review the Alice to Bob transaction 29](#_Toc202777445)
-
-[Exercise 9: Explore the Settings window of the Alice wallet 32](#_Toc202777446)
-
-[Exercise 10: Create watch only wallet based on Alice 35](#_Toc202777447)
-
-[Exercise 11: Explore the Alice Watch Only wallet 37](#_Toc202777448)
-
-[Exercise 12: Receive bitcoin via a watch only wallet 39](#_Toc202777449)
-
-[Exercise 13: Use the Alice Watch Only wallet to send a transaction 41](#_Toc202777450)
-
-[Exercise 14: Create wallet Bob Legacy Script Type 43](#_Toc202777451)
-
-[Exercise 15: Create wallet Alice With Passphrase 46](#_Toc202777452)
-
-[Exercise 16: Review some transactions 49](#_Toc202777453)
-
-[Exercise 17: Send bitcoin from Alice to Bob—review fees 53](#_Toc202777454)
-
-[Exercise 18: Bitcoin fees—what you pay, and why 56](#_Toc202777455)
-
-[Exercise 19: Install Blue Wallet and create the Carol wallet 60](#_Toc202777456)
-
-[Exercise 20: Send bitcoin from Bob in Sparrow to Carol in Blue Wallet 63](#_Toc202777457)
-
-[Exercise 21: Send bitcoin from your exchange to Blue Wallet Carol 65](#_Toc202777458)
-
-[Exercise 22: Import the Alice wallet to Blue Wallet via the public key 67](#_Toc202777459)
-
-[Exercise 23: Import the Alice wallet to Blue Wallet via the descriptor 69](#_Toc202777460)
-
-[Exercise 24: Set up password protection on Blue Wallet 71](#_Toc202777461)
-
-[Exercise 25: Recover the Bob wallet in Blue Wallet 73](#_Toc202777462)
-
-[Exercise 26: Send all bitcoin from the Bob Recovery wallet in Blue Wallet to Alice in Sparrow 76](#_Toc202777463)
-
-[Exercise 27: Bonus—use Blockstream wallet 78](#_Toc202777464)
-
-[Exercise 28: Clearing practice wallets and creating a long-term wallet 80](#_Toc202777465)
-
-[Final notes and next steps 82](#_Toc202777466)
-
-[Resources 91](#_Toc202777467)
-
-Introduction
+# Introduction
 
 First of all, thank you for purchasing this book! Any feedback would be appreciated. For any questions or issues, please send email to [feedback@BitcoinHandsOn.com](feedback@BitcoinHandsOn.com).
 
