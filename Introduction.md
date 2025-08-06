@@ -1,5 +1,5 @@
 ---
-title: "Chapter 1: Introduction"
+title: "Introduction"
 nav_order: 1
 ---
 
@@ -68,4 +68,5 @@ Here’s a few tips on going through the exercises, and how to really learn the 
 Author’s note on Bitcoin capitalization:
 
 Standards are still evolving on when Bitcoin should be capitalized, but the consensus seems to be—upper case when speaking of Bitcoin as a system, and lower case when speaking of the currency units, or as an adjective. That’s what I do in this book.
+
 
