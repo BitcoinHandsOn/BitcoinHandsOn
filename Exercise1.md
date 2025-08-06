@@ -1,3 +1,8 @@
+---
+title: "Exercise 1: Install Sparrow Bitcoin Wallet"
+nav_order: 2
+---
+
 # Exercise 1: Install Sparrow Bitcoin Wallet
 
 In this step we’ll install Sparrow Bitcoin Wallet. Sparrow is the most widely used and respected desktop Bitcoin wallet. It’s free—and more importantly, it’s open source. Open source software means that the code is publicly available for review. You can see the actual Sparrow Wallet source code right here: [https://github.com/sparrowwallet/sparrow](https://github.com/sparrowwallet/sparrow). This allows people to verify there’s nothing harmful hidden in the software.
@@ -59,3 +64,4 @@ Verifying, and knowing for yourself, is one of the core principles of Bitcoin. I
 Don’t trust, verify
 
 To verify the Sparrow code, go to this page: [https://sparrowwallet.com/download/.](https://sparrowwallet.com/download/.) Scroll down to the “Verifying the Release” section, and follow the steps there. This will ensure that the download wasn’t corrupted with malware.
+
