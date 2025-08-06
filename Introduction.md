@@ -1,3 +1,8 @@
+---
+title: "Chapter 1: Introduction"
+nav_order: 1
+---
+
 # Introduction
 
 First of all, thank you for purchasing this book! Any feedback would be appreciated. For any questions or issues, please send email to [feedback@BitcoinHandsOn.com](feedback@BitcoinHandsOn.com).
@@ -63,3 +68,4 @@ Here’s a few tips on going through the exercises, and how to really learn the 
 Author’s note on Bitcoin capitalization:
 
 Standards are still evolving on when Bitcoin should be capitalized, but the consensus seems to be—upper case when speaking of Bitcoin as a system, and lower case when speaking of the currency units, or as an adjective. That’s what I do in this book.
+
