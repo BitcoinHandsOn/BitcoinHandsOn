@@ -1,3 +1,7 @@
+---
+title: "Exercise 2: Create Alice wallet in Sparrow"
+nav_order: 3
+---
 # Exercise 2: Create Alice wallet in Sparrow
 
 In this exercise, you’ll create your first wallet. Wallets are the foundation of working with bitcoin, and most of the exercises in this book involve wallets. The name Alice will be used for this wallet. You can think of the wallet as belonging to Alice. Later on, you’ll create more wallets, belonging to different characters.
@@ -57,3 +61,4 @@ Although you will create a few other wallets, they will all be derived from one 
 Though we’re naming wallets after people (like Alice and Bob), this is just to make it easier to understand. But one person _can_ have multiple wallets, for different purposes. For instance, Alice may have a Cold Storage wallet, and a Spending wallet, just like you might have a savings account and a checking account at a bank.
 
 Using these different wallets, in multiple bitcoin wallet applications, you’ll gain hands on experience with many user interfaces. This approach is an excellent way to master the fundamentals of Bitcoin, and to learn the skills needed to safely hold, send, and receive bitcoin.
+
