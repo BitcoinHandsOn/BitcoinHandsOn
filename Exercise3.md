@@ -1,3 +1,7 @@
+---
+title: "Exercise 3: Buy Bitcoin"
+nav_order: 4
+---
 # Exercise 3: Buy Bitcoin
 
 In this step, you’ll actually purchase bitcoin, using whichever source you prefer from the options given below. In the exercise after this one, you’ll move some of that bitcoin to the wallet you created in Exercise 2.
@@ -68,3 +72,4 @@ Below are some of the more common P2P exchanges. For more options, take a look a
 Robosats requires a Bitcoin Lightning wallet in order to use it (see the [Resources](#Resources) section at the end of this book for more information on Lightning), but it’s one of the most popular and easiest P2P exchanges.
 
 In the next exercise, you will need to have already completed the purchase of bitcoin. It needs to be ready to send, from the exchange to your own receive address.
+
