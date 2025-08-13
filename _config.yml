@@ -14,53 +14,53 @@ nav:
     url: Exercise_2
   - title: "Exercise 3: Buy Bitcoin"
     url: Exercise_3
-  - title: "Exercise 4: Receive bitcoin into your Alice wallet"
-    url: Exercise_4
-  - title: "Exercise 5: Recover your Alice wallet"
-    url: Exercise_5
-  - title: "Exercise 6: Create wallet Bob"
-    url: Exercise_6
-  - title: "Exercise 7: Your first send—transfer bitcoin from Alice to Bob"
-    url: Exercise_7
-  - title: "Exercise 9: Explore the Settings window of the Alice wallet"
-    url: Exercise_9
-  - title: "Exercise 11: Explore the Alice Watch Only wallet"
-    url: Exercise_11
-  - title: "Exercise 12: Receive bitcoin via a watch only wallet"
-    url: Exercise_12
-  - title: "Exercise 13: Use the Alice Watch Only wallet to send a transaction"
-    url: Exercise_13
-  - title: "Exercise 14: Create wallet Bob Legacy Script Type"
-    url: Exercise_14
-  - title: "Exercise 15: Create wallet Alice With Passphrase"
-    url: Exercise_15
-  - title: "Exercise 16: Review some transactions"
-    url: Exercise_16
-  - title: "Exercise 17: Send bitcoin from Alice to Bob—review fees"
-    url: Exercise_17
-  - title: "Exercise 18: Bitcoin fees—what you pay, and why"
-    url: Exercise_18
-  - title: "Exercise 19: Install Blue Wallet and create the Carol wallet"
-    url: Exercise_19
-  - title: "Exercise 20: Send bitcoin from Bob in Sparrow to Carol in Blue Wallet"
-    url: Exercise_20
-  - title: "Exercise 21: Send bitcoin from your exchange to Blue Wallet Carol"
-    url: Exercise_21
-  - title: "Exercise 22: Import the Alice wallet to Blue Wallet via the public key"
-    url: Exercise_22
-  - title: "Exercise 23: Import the Alice wallet to Blue Wallet via the descriptor"
-    url: Exercise_23
-  - title: "Exercise 24: Set up password protection on Blue Wallet"
-    url: Exercise_24
-  - title: "Exercise 25: Recover the Bob wallet in Blue Wallet"
-    url: Exercise_25
-  - title: "Exercise 26: Send all bitcoin from the Bob Recovery wallet in Blue Wallet to Alice in Sparrow"
-    url: Exercise_26
-  - title: "Exercise 27: Bonus—use Blockstream wallet"
-    url: Exercise_27
-  - title: "Exercise 28: Clearing practice wallets and creating a long-term wallet"
-    url: Exercise_28
-  - title: "Final notes and next steps"
-    url: Final_notes_and_next_steps
-  - title: "Resources"
-    url: Resources
+#  - title: "Exercise 4: Receive bitcoin into your Alice wallet"
+#    url: Exercise_4
+#  - title: "Exercise 5: Recover your Alice wallet"
+#    url: Exercise_5
+#  - title: "Exercise 6: Create wallet Bob"
+#    url: Exercise_6
+#  - title: "Exercise 7: Your first send—transfer bitcoin from Alice to Bob"
+#    url: Exercise_7
+#  - title: "Exercise 9: Explore the Settings window of the Alice wallet"
+#    url: Exercise_9
+#  - title: "Exercise 11: Explore the Alice Watch Only wallet"
+#    url: Exercise_11
+#  - title: "Exercise 12: Receive bitcoin via a watch only wallet"
+#    url: Exercise_12
+#  - title: "Exercise 13: Use the Alice Watch Only wallet to send a transaction"
+#    url: Exercise_13
+#  - title: "Exercise 14: Create wallet Bob Legacy Script Type"
+#    url: Exercise_14
+#  - title: "Exercise 15: Create wallet Alice With Passphrase"
+#    url: Exercise_15
+#  - title: "Exercise 16: Review some transactions"
+#    url: Exercise_16
+#  - title: "Exercise 17: Send bitcoin from Alice to Bob—review fees"
+#    url: Exercise_17
+#  - title: "Exercise 18: Bitcoin fees—what you pay, and why"
+#    url: Exercise_18
+#  - title: "Exercise 19: Install Blue Wallet and create the Carol wallet"
+#    url: Exercise_19
+#  - title: "Exercise 20: Send bitcoin from Bob in Sparrow to Carol in Blue Wallet"
+#    url: Exercise_20
+#  - title: "Exercise 21: Send bitcoin from your exchange to Blue Wallet Carol"
+#    url: Exercise_21
+#  - title: "Exercise 22: Import the Alice wallet to Blue Wallet via the public key"
+#    url: Exercise_22
+#  - title: "Exercise 23: Import the Alice wallet to Blue Wallet via the descriptor"
+#    url: Exercise_23
+#  - title: "Exercise 24: Set up password protection on Blue Wallet"
+#    url: Exercise_24
+#  - title: "Exercise 25: Recover the Bob wallet in Blue Wallet"
+#    url: Exercise_25
+#  - title: "Exercise 26: Send all bitcoin from the Bob Recovery wallet in Blue Wallet to Alice in Sparrow"
+#    url: Exercise_26
+#  - title: "Exercise 27: Bonus—use Blockstream wallet"
+#    url: Exercise_27
+#  - title: "Exercise 28: Clearing practice wallets and creating a long-term wallet"
+#    url: Exercise_28
+#  - title: "Final notes and next steps"
+#    url: Final_notes_and_next_steps
+#  - title: "Resources"
+#    url: Resources
