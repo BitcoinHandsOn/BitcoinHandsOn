@@ -10,10 +10,10 @@ nav:
     url: Introduction
   - title: "Exercise 1: Install Sparrow Bitcoin Wallet"
     url: Exercise_1
-  - title: "Exercise 2: Create Alice wallet in Sparrow"
-    url: Exercise_2
-  - title: "Exercise 3: Buy Bitcoin"
-    url: Exercise_3
+#  - title: "Exercise 2: Create Alice wallet in Sparrow"
+#    url: Exercise_2
+#  - title: "Exercise 3: Buy Bitcoin"
+#    url: Exercise_3
 #  - title: "Exercise 4: Receive bitcoin into your Alice wallet"
 #    url: Exercise_4
 #  - title: "Exercise 5: Recover your Alice wallet"
