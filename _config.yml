@@ -2,3 +2,63 @@ title: "Bitcoin, Hands-On!"
 remote_theme: just-the-docs/just-the-docs
 search_enabled: true
 
+
+nav:
+  - title: "Introduction"
+    url: /Chapters/Introduction
+  - title: "Exercise 1: Install Sparrow Bitcoin Wallet"
+    url: /Chapters/Exercise_1:_Install_Sparrow_Bitcoin_Wallet
+  - title: "Exercise 2: Create Alice wallet in Sparrow"
+    url: /Chapters/Exercise_2:_Create_Alice_wallet_in_Sparrow
+  - title: "Exercise 3: Buy Bitcoin"
+    url: /Chapters/Exercise_3:_Buy_Bitcoin
+  - title: "Exercise 4: Receive bitcoin into your Alice wallet"
+    url: /Chapters/Exercise_4:_Receive_bitcoin_into_your_Alice_wallet
+  - title: "Exercise 5: Recover your Alice wallet"
+    url: /Chapters/Exercise_5:_Recover_your_Alice_wallet
+  - title: "Exercise 6: Create wallet Bob"
+    url: /Chapters/Exercise_6:_Create_wallet_Bob
+  - title: "Exercise 7: Your first send—transfer bitcoin from Alice to Bob"
+    url: /Chapters/Exercise_7:_Your_first_send—transfer_bitcoin_from_Alice_to_Bob
+  - title: "Exercise 9: Explore the Settings window of the Alice wallet"
+    url: /Chapters/Exercise_9:_Explore_the_Settings_window_of_the_Alice_wallet
+  - title: "Exercise 11: Explore the Alice Watch Only wallet"
+    url: /Chapters/Exercise_11:_Explore_the_Alice_Watch_Only_wallet
+  - title: "Exercise 12: Receive bitcoin via a watch only wallet"
+    url: /Chapters/Exercise_12:_Receive_bitcoin_via_a_watch_only_wallet
+  - title: "Exercise 13: Use the Alice Watch Only wallet to send a transaction"
+    url: /Chapters/Exercise_13:_Use_the_Alice_Watch_Only_wallet_to_send_a_transaction
+  - title: "Exercise 14: Create wallet Bob Legacy Script Type"
+    url: /Chapters/Exercise_14:_Create_wallet_Bob_Legacy_Script_Type
+  - title: "Exercise 15: Create wallet Alice With Passphrase"
+    url: /Chapters/Exercise_15:_Create_wallet_Alice_With_Passphrase
+  - title: "Exercise 16: Review some transactions"
+    url: /Chapters/Exercise_16:_Review_some_transactions
+  - title: "Exercise 17: Send bitcoin from Alice to Bob—review fees"
+    url: /Chapters/Exercise_17:_Send_bitcoin_from_Alice_to_Bob—review_fees
+  - title: "Exercise 18: Bitcoin fees—what you pay, and why"
+    url: /Chapters/Exercise_18:_Bitcoin_fees—what_you_pay,_and_why
+  - title: "Exercise 19: Install Blue Wallet and create the Carol wallet"
+    url: /Chapters/Exercise_19:_Install_Blue_Wallet_and_create_the_Carol_wallet
+  - title: "Exercise 20: Send bitcoin from Bob in Sparrow to Carol in Blue Wallet"
+    url: /Chapters/Exercise_20:_Send_bitcoin_from_Bob_in_Sparrow_to_Carol_in_Blue_Wallet
+  - title: "Exercise 21: Send bitcoin from your exchange to Blue Wallet Carol"
+    url: /Chapters/Exercise_21:_Send_bitcoin_from_your_exchange_to_Blue_Wallet_Carol
+  - title: "Exercise 22: Import the Alice wallet to Blue Wallet via the public key"
+    url: /Chapters/Exercise_22:_Import_the_Alice_wallet_to_Blue_Wallet_via_the_public_key
+  - title: "Exercise 23: Import the Alice wallet to Blue Wallet via the descriptor"
+    url: /Chapters/Exercise_23:_Import_the_Alice_wallet_to_Blue_Wallet_via_the_descriptor
+  - title: "Exercise 24: Set up password protection on Blue Wallet"
+    url: /Chapters/Exercise_24:_Set_up_password_protection_on_Blue_Wallet
+  - title: "Exercise 25: Recover the Bob wallet in Blue Wallet"
+    url: /Chapters/Exercise_25:_Recover_the_Bob_wallet_in_Blue_Wallet
+  - title: "Exercise 26: Send all bitcoin from the Bob Recovery wallet in Blue Wallet to Alice in Sparrow"
+    url: /Chapters/Exercise_26:_Send_all_bitcoin_from_the_Bob_Recovery_wallet_in_Blue_Wallet_to_Alice_in_Sparrow
+  - title: "Exercise 27: Bonus—use Blockstream wallet"
+    url: /Chapters/Exercise_27:_Bonus—use_Blockstream_wallet
+  - title: "Exercise 28: Clearing practice wallets and creating a long-term wallet"
+    url: /Chapters/Exercise_28:_Clearing_practice_wallets_and_creating_a_long-term_wallet
+  - title: "Final notes and next steps"
+    url: /Chapters/Final_notes_and_next_steps
+  - title: "Resources"
+    url: /Chapters/Resources
