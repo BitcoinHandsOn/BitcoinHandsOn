@@ -1,6 +1,6 @@
 title: "Bitcoin, Hands-On!"
 remote_theme: just-the-docs/just-the-docs
-# search_enabled: true
+search_enabled: true
 
 nav:
   - title: "Introduction"
