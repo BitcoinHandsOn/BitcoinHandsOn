@@ -1,12 +1,9 @@
 remote_theme: just-the-docs/just-the-docs
-title: "Bitcoin Hands-On"
-description: "A practical guide to Bitcoin development and usage test."
+title: "Bitcoin Hands-On! 28 “learn-by-doing” exercises to master the basics of managing your own Bitcoin, including wallets, transactions, and self custody "
 url: "https://bitcoinhandson.github.io/BitcoinHandsOn/"
 baseurl: "/BitcoinHandsOn"
 nav_sort: case_insensitive
-aux_links:
-  "GitHub Repository": "https://github.com/bitcoinhandson/BitcoinHandsOn"
-collections:
+
   docs:
     output: true
     permalink: /:collection/:path/
