@@ -3,35 +3,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Book</title>
     <style>
-        /* Use a better box model for easier layout math */
-        * {
-            box-sizing: border-box;
-        }
+        /* --- Base Styles --- */
+        * { box-sizing: border-box; }
         body {
             margin: 0;
             font-family: Georgia, serif;
         }
-        /* Define the main two-column container using Flexbox */
         .book-container {
             display: flex;
         }
-        /* Style the Left Sidebar Pane (Table of Contents) */
+
+        /* --- Desktop Layout (Screens > 768px) --- */
         .sidebar-nav {
-            flex: 0 0 320px; /* Does not grow or shrink, fixed width of 320px */
-            padding: 1em 2em;
-            height: 100vh; /* Makes the sidebar the full height of the screen */
-            position: sticky; /* Makes it "stick" to the top as you scroll */
+            flex: 0 0 320px;
+            height: 100vh;
+            position: sticky;
             top: 0;
-            overflow-y: auto; /* Adds a scrollbar ONLY to the sidebar if the TOC is long */
-            background-color: #f5f5f5; /* Light gray background to distinguish it */
+            overflow-y: auto;
+            background-color: #f5f5f5;
             border-right: 1px solid #ddd;
+            padding: 1em 2em;
         }
-        /* Make the TOC links look nice and clean */
-        .sidebar-nav h2 {
-            margin-top: 0.5em;
+        .main-content {
+            flex: 1;
+            padding: 2em 4em;
+            max-width: 900px;
         }
+        .hamburger-icon,
+        .overlay {
+            display: none; /* Hide mobile elements on desktop */
+        }
+
+        /* --- TOC Link Styles (Shared) --- */
+        .sidebar-nav h2 { margin-top: 0.5em; }
         .sidebar-nav .MsoToc1, .sidebar-nav .MsoToc2, .sidebar-nav .MsoToc3 {
             font-size: 15px;
             line-height: 1.5;
@@ -41,18 +48,66 @@
             text-decoration: none;
             color: #005a9c;
         }
-        .sidebar-nav a:hover {
-            text-decoration: underline;
-        }
-        /* Style the Right Main Content Pane (Your Book) */
-        .main-content {
-            flex: 1; /* Takes up the remaining available space */
-            padding: 2em 4em;
-            max-width: 900px; /* Optional: adds a max reading width for comfort */
+        .sidebar-nav a:hover { text-decoration: underline; }
+
+        /* --- Mobile Layout (Screens <= 768px) --- */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 1.5em;
+            }
+            .sidebar-nav {
+                position: fixed; /* Take it out of the document flow */
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 280px;
+                background-color: #fff;
+                z-index: 1000;
+                transform: translateX(-100%); /* Hide it off-screen to the left */
+                transition: transform 0.3s ease-in-out;
+            }
+            .hamburger-icon {
+                display: block; /* Show the hamburger */
+                position: fixed;
+                top: 15px;
+                left: 15px;
+                z-index: 1001; /* Must be on top of the sidebar */
+                background: #fff;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                padding: 8px;
+                cursor: pointer;
+            }
+            .overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                display: none; /* Hidden by default */
+            }
+            /* --- Styles for when the sidebar is OPEN on mobile --- */
+            body.sidebar-open .sidebar-nav {
+                transform: translateX(0); /* Slide it into view */
+            }
+            body.sidebar-open .overlay {
+                display: block; /* Show the dark overlay */
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Mobile-only elements -->
+    <button class="hamburger-icon" aria-label="Open Menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 6H20M4 12H20M4 18H20" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+    <div class="overlay"></div>
+
+    <!-- Main page structure -->
     <div class="book-container">
         <nav class="sidebar-nav">
             <h2>Table of Contents</h2>
@@ -6135,5 +6190,20 @@ try to get you to reveal your seed phrase. When looking for a support group on
 Telegram, only go to the Telegram group link from the official website.</p></body></html>
         </main>
     </div>
+
+    <!-- JavaScript to control the mobile menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburger = document.querySelector('.hamburger-icon');
+            const overlay = document.querySelector('.overlay');
+            
+            function toggleSidebar() {
+                document.body.classList.toggle('sidebar-open');
+            }
+            
+            hamburger.addEventListener('click', toggleSidebar);
+            overlay.addEventListener('click', toggleSidebar);
+        });
+    </script>
 </body>
 </html>
