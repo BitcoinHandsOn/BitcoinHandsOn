@@ -1,6 +1,6 @@
 remote_theme: just-the-docs/just-the-docs
 title: "Bitcoin Hands-On"
-description: "A practical guide to Bitcoin development and usage."
+description: "A practical guide to Bitcoin development and usage test."
 url: "https://bitcoinhandson.github.io/BitcoinHandsOn/"
 baseurl: "/BitcoinHandsOn"
 nav_sort: case_insensitive
