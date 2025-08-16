@@ -1,0 +1,55 @@
+site_name: Bitcoin Hands-On
+site_description: A hands-on guide to Bitcoin
+site_url: https://bitcoinhandson.github.io/BitcoinHandsOn/
+
+repo_url: https://github.com/BitcoinHandsOn/BitcoinHandsOn
+repo_name: BitcoinHandsOn/BitcoinHandsOn
+
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: orange
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.top
+    - search.highlight
+    - search.share
+    - toc.follow
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+
+nav:
+  - Home: index.md
+  - Introduction: introduction.md
+  - Chapter 1: chapter1.md
+  - Chapter 2: chapter2.md
+
+plugins:
+  - search
