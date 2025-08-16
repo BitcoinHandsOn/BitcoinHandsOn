@@ -8,3 +8,8 @@ baseurl: "/bitcoinhandson"
 nav_sort: case_insensitive
 aux_links:
   "GitHub Repository": "https://github.com/bitcoinhandson/bitcoinhandson"
+
+collections:
+  docs:
+    output: true
+    permalink: /:collection/:path/
