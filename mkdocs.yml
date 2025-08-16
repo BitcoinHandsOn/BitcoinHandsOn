@@ -1,0 +1,9 @@
+site_name: BitcoinHandsOn
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - Guide: guide.md
+  - API Reference: api.md
