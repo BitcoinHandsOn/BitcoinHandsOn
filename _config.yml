@@ -1,0 +1,10 @@
+title: "Bitcoin Hands-On"
+description: "A practical guide to Bitcoin development and usage."
+theme: "just-the-docs"
+url: "https://bitcoinhandson.github.io/bitcoinhandson/"
+baseurl: "/bitcoinhandson"
+
+# JustTheDocs navigation settings
+nav_sort: case_insensitive
+aux_links:
+  "GitHub Repository": "https://github.com/bitcoinhandson/bitcoinhandson"
