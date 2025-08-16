@@ -4,6 +4,6 @@ theme:
   name: material
 
 nav:
-  - Home: index.md
-  - Guide: guide.md
-  - API Reference: api.md
+  - Introduction: introduction.md
+  - Chapter 1: chapter1.md
+  - Chapter 2: chapter2.md
