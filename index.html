@@ -25,7 +25,11 @@
         @media (max-width: 992px) {
             .main-content { padding: 1.5em; }
             .sidebar-nav { position: fixed; top: 0; left: 0; height: 100%; z-index: 1000; background-color: #fff; width: 280px; transform: translateX(-100%); transition: transform 0.3s ease-in-out; }
-            .hamburger-icon { display: block; position: fixed; top: 15px; left: 15px; z-index: 1001; background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px; cursor: pointer; }
+            .hamburger-icon {
+                display: block; position: fixed; top: 15px;
+                right: 15px; /* MODIFIED: Placed on the right */
+                z-index: 1001; background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px; cursor: pointer;
+            }
             .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 999; }
             body.sidebar-open .sidebar-nav { transform: translateX(0); }
             body.sidebar-open .overlay { display: block; }
@@ -33,9 +37,25 @@
     </style>
 <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const hamburger = document.querySelector('.hamburger-icon'); const overlay = document.querySelector('.overlay');
+            const hamburger = document.querySelector('.hamburger-icon');
+            const overlay = document.querySelector('.overlay');
+            const sidebar = document.querySelector('.sidebar-nav'); // NEW: Select the sidebar itself
+            
             const toggleSidebar = () => document.body.classList.toggle('sidebar-open');
-            if (hamburger) hamburger.addEventListener('click', toggleSidebar); if (overlay) overlay.addEventListener('click', toggleSidebar);
+            
+            if (hamburger) hamburger.addEventListener('click', toggleSidebar);
+            if (overlay) overlay.addEventListener('click', toggleSidebar);
+            
+            // NEW: Add a listener to the sidebar
+            if (sidebar) {
+                sidebar.addEventListener('click', function(event) {
+                    // Check if the clicked element inside the sidebar is an anchor link
+                    if (event.target.tagName === 'A') {
+                        // If it is, close the sidebar so the user can see the content
+                        toggleSidebar();
+                    }
+                });
+            }
         });
     </script>
 </head></html></head>
@@ -189,7 +209,7 @@ and acknowledge these risks.</p>
 <h1 class="Header-1-without-numbers" id="introduction">Introduction</h1>
 <p>First of all, thank you for purchasing this book! Any feedback would
 
-be appreciated. For any questions or issues, please send email to <a href="feedback@BitcoinHandsOn.com" rel="noopener noreferrer" target="_blank">feedback@BitcoinHandsOn.com</a>.</p>
+be appreciated. For any questions or issues, please send email to <a href="feedback@BitcoinHandsOn.com">feedback@BitcoinHandsOn.com</a>.</p>
 <p>I’ll start out by telling you what this book is not. It’s not about
 
 the “why” of Bitcoin. I’m going to assume that since you’re reading this
@@ -402,7 +422,7 @@ more importantly, it’s open source. Open source software means that the
 
 code is publicly available for review. You can see the actual Sparrow
 
-Wallet source code right here: <a href="https://github.com/sparrowwallet/sparrow" rel="noopener noreferrer" target="_blank">https://github.com/sparrowwallet/sparrow</a>.
+Wallet source code right here: <a href="https://github.com/sparrowwallet/sparrow">https://github.com/sparrowwallet/sparrow</a>.
 
 This allows people to verify there’s nothing harmful hidden in the
 
@@ -418,7 +438,7 @@ However, it’s frequently updated, and your version might be different.
 If any changes significantly impact these exercises, I will update
 
 them.</p>
-<p>To install Sparrow, go to <a href="https://sparrowwallet.com/download/" rel="noopener noreferrer" target="_blank">https://sparrowwallet.com/download/</a>.
+<p>To install Sparrow, go to <a href="https://sparrowwallet.com/download/">https://sparrowwallet.com/download/</a>.
 
 You’ll see options for downloading versions for MacOS, Windows, and
 
@@ -490,8 +510,8 @@ resolution.</p>
 <p>Here’s some information from the developers of Sparrow on the
 
 problem:</p>
-<p><a href="https://sparrowwallet.com/docs/faq.html#im-running-on-a-high-resolution-screen-and-sparrow-icons-and-text-are-tiny" rel="noopener noreferrer" target="_blank">https://sparrowwallet.com/docs/faq.html#im-running-on-a-high-resolution-screen-and-sparrow-icons-and-text-are-tiny</a></p>
-<p><a href="https://sparrowwallet.com/docs/faq.html#sparrow-is-too-big-for-my-screen" rel="noopener noreferrer" target="_blank">https://sparrowwallet.com/docs/faq.html#sparrow-is-too-big-for-my-screen</a></p>
+<p><a href="https://sparrowwallet.com/docs/faq.html#im-running-on-a-high-resolution-screen-and-sparrow-icons-and-text-are-tiny">https://sparrowwallet.com/docs/faq.html#im-running-on-a-high-resolution-screen-and-sparrow-icons-and-text-are-tiny</a></p>
+<p><a href="https://sparrowwallet.com/docs/faq.html#sparrow-is-too-big-for-my-screen">https://sparrowwallet.com/docs/faq.html#sparrow-is-too-big-for-my-screen</a></p>
 <h3 class="NewSubheading" id="what-server-to-connect-to">What server to
 
 connect to?</h3>
@@ -524,7 +544,7 @@ connection.</p>
 <h3 class="NewSubheading" id="some-warnings">Some warnings </h3>
 <p>There are websites and applications out there that pretend to be the
 
-real thing, but are not. For instance, the real site for Sparrow is <a href="https://sparrowwallet.com" rel="noopener noreferrer" target="_blank">https://sparrowwallet.com</a>.</p>
+real thing, but are not. For instance, the real site for Sparrow is <a href="https://sparrowwallet.com">https://sparrowwallet.com</a>.</p>
 <p>Unfortunately, a scam website (sparrowwallet.net) sometimes comes up
 
 when you search for Sparrow Bitcoin Wallet. But the software on that
@@ -557,7 +577,7 @@ software is open source, and you can review it.</p>
 <blockquote>
 <p>Don’t trust, verify</p>
 </blockquote>
-<p>To verify the Sparrow code, go to this page: <a href="https://sparrowwallet.com/download/." rel="noopener noreferrer" target="_blank">https://sparrowwallet.com/download/.</a>
+<p>To verify the Sparrow code, go to this page: <a href="https://sparrowwallet.com/download/.">https://sparrowwallet.com/download/.</a>
 
 Scroll down to the “Verifying the Release” section, and follow the steps
 
@@ -912,33 +932,33 @@ actually allow you to withdraw your bitcoin, to your own wallet.</p>
 <tbody>
 <tr>
 <td>Strike (Many countries)</td>
-<td><a href="https://strike.me/" rel="noopener noreferrer" target="_blank">https://strike.me/</a></td>
+<td><a href="https://strike.me/">https://strike.me/</a></td>
 </tr>
 </tbody>
 <tbody>
 <tr>
 <td>Swan (US)</td>
-<td><a href="https://www.swanbitcoin.com/" rel="noopener noreferrer" target="_blank">https://www.swanbitcoin.com/</a></td>
+<td><a href="https://www.swanbitcoin.com/">https://www.swanbitcoin.com/</a></td>
 </tr>
 <tr>
 <td>Unchained Capital (US)</td>
-<td><a href="https://unchained.com/" rel="noopener noreferrer" target="_blank">https://unchained.com/</a></td>
+<td><a href="https://unchained.com/">https://unchained.com/</a></td>
 </tr>
 <tr>
 <td>River (US)</td>
-<td><a href="https://river.com/" rel="noopener noreferrer" target="_blank">https://river.com/</a></td>
+<td><a href="https://river.com/">https://river.com/</a></td>
 </tr>
 <tr>
 <td>Cashapp (US, UK)</td>
-<td><a href="https://cash.app" rel="noopener noreferrer" target="_blank">https://cash.app</a></td>
+<td><a href="https://cash.app">https://cash.app</a></td>
 </tr>
 <tr>
 <td>Relai (Europe, Swiss-based)</td>
-<td><a href="https://relai.app/" rel="noopener noreferrer" target="_blank">https://relai.app/</a></td>
+<td><a href="https://relai.app/">https://relai.app/</a></td>
 </tr>
 <tr>
 <td>Bull Bitcoin (Canada, Europe)</td>
-<td><a href="https://www.bullbitcoin.com/" rel="noopener noreferrer" target="_blank">https://www.bullbitcoin.com/</a></td>
+<td><a href="https://www.bullbitcoin.com/">https://www.bullbitcoin.com/</a></td>
 </tr>
 </tbody>
 </table>
@@ -952,7 +972,7 @@ because the P2P markets can change quickly. But on the plus side, you
 get the best possible privacy, and that’s worth a lot.</p>
 <p>Below are some of the more common P2P exchanges. For more options,
 
-take a look at this site: <a href="https://kycnot.me/" rel="noopener noreferrer" target="_blank">https://kycnot.me/</a>.</p>
+take a look at this site: <a href="https://kycnot.me/">https://kycnot.me/</a>.</p>
 <table>
 <colgroup>
 <col style="width: 47%"/>
@@ -961,25 +981,25 @@ take a look at this site: <a href="https://kycnot.me/" rel="noopener noreferrer"
 <tbody>
 <tr>
 <td>Robosats</td>
-<td><a href="https://learn.robosats.com/" rel="noopener noreferrer" target="_blank">https://learn.robosats.com/</a></td>
+<td><a href="https://learn.robosats.com/">https://learn.robosats.com/</a></td>
 </tr>
 </tbody>
 <tbody>
 <tr>
 <td>Bisq</td>
-<td><a href="https://bisq.network/" rel="noopener noreferrer" target="_blank">https://bisq.network/</a></td>
+<td><a href="https://bisq.network/">https://bisq.network/</a></td>
 </tr>
 <tr>
 <td>Peach</td>
-<td><a href="https://peachbitcoin.com/" rel="noopener noreferrer" target="_blank">https://peachbitcoin.com/</a></td>
+<td><a href="https://peachbitcoin.com/">https://peachbitcoin.com/</a></td>
 </tr>
 <tr>
 <td>Hodl Hodl</td>
-<td><a href="https://hodlhodl.com/" rel="noopener noreferrer" target="_blank">https://hodlhodl.com/</a></td>
+<td><a href="https://hodlhodl.com/">https://hodlhodl.com/</a></td>
 </tr>
 <tr>
 <td>Vexl</td>
-<td><a href="https://vexl.it/" rel="noopener noreferrer" target="_blank">https://vexl.it/</a></td>
+<td><a href="https://vexl.it/">https://vexl.it/</a></td>
 </tr>
 </tbody>
 </table>
@@ -1837,7 +1857,7 @@ basics.</p>
 thoughts with a review on Amazon!</p>
 <p>If you have feedback on the exercises, please let me know. Contact me
 
-at <a href="feedback@BitcoinHandsOn.com" rel="noopener noreferrer" target="_blank">feedback@BitcoinHandsOn.com</a>.</p>
+at <a href="feedback@BitcoinHandsOn.com">feedback@BitcoinHandsOn.com</a>.</p>
 <h1 class="Header-1-without-numbers" id="exercise-10-create-watch-only-wallet-based-on-alice">Exercise 10:
 
 Create watch only wallet based on Alice</h1>
@@ -2518,7 +2538,7 @@ like a paper airplane.</p></li>
 <h3 class="NewSubheading" id="explore-an-address-in-mempool.space">Explore an address in
 
 Mempool.space </h3>
-<p>Now you’re going to use the blockchain explorer <a href="https://mempool.space" rel="noopener noreferrer" target="_blank">https://mempool.space</a> to view
+<p>Now you’re going to use the blockchain explorer <a href="https://mempool.space">https://mempool.space</a> to view
 
 transactions. What exactly is a blockchain explorer? It’s a website that
 
@@ -2548,7 +2568,7 @@ first bitcoin you received into Alice. Go to your receive address (the
 one with a downward pointing arrow icon). Right-click (or Control-click
 
 on a Mac), and then click on <strong>Copy Address</strong></p></li>
-<li><p>Now in a browser, go to <a href="https://mempool.space/" rel="noopener noreferrer" target="_blank">https://mempool.space/</a>. In the top
+<li><p>Now in a browser, go to <a href="https://mempool.space/">https://mempool.space/</a>. In the top
 
 right, where it says Explore the full Bitcoin ecosystem, <strong>paste
 
@@ -2703,7 +2723,7 @@ about half the bitcoin you have in Alice.</p></li>
 sense of how they work.</p></li>
 </ol>
 <ul>
-<li><p>Go to the website <a href="https://mempool.space/" rel="noopener noreferrer" target="_blank">https://mempool.space/</a> and look at
+<li><p>Go to the website <a href="https://mempool.space/">https://mempool.space/</a> and look at
 
 what the estimated transaction fees are, on the bottom left. They range
 
@@ -2817,7 +2837,7 @@ sat/vB. A low transaction fee rate would be 1 or 2 sats/vByte.
 Occasionally, transaction fees can go up very high, but transaction fees
 
 are low now (early 2025).</p>
-<p>The front page of the website <a href="https://mempool.space" rel="noopener noreferrer" target="_blank">https://mempool.space</a> has good
+<p>The front page of the website <a href="https://mempool.space">https://mempool.space</a> has good
 
 information on what the current fee rates are. It’s divided up into No
 
@@ -2826,11 +2846,11 @@ priority, Low Priority, Medium Priority, and High priority. The High
 priority ones will usually make it into the next block.</p>
 <p>Mempool.space also has great historical information on fees. To
 
-access it, go to <a href="https://mempool.space/" rel="noopener noreferrer" target="_blank">https://mempool.space/</a> and then click
+access it, go to <a href="https://mempool.space/">https://mempool.space/</a> and then click
 
 the white Graph icon at the top, then the blue Mining dropdown on the
 
-left, and choose Block Fee Rates. Or you can go directly to <a href="https://mempool.space/graphs/mining/block-fee-rates" rel="noopener noreferrer" target="_blank">https://mempool.space/graphs/mining/block-fee-rates</a>.</p>
+left, and choose Block Fee Rates. Or you can go directly to <a href="https://mempool.space/graphs/mining/block-fee-rates">https://mempool.space/graphs/mining/block-fee-rates</a>.</p>
 <p>Do some exploration on the Block Fee Rates page, using the time
 
 ranges at the top right (24h, 3D, 1W, etc.), and the bar sliders on the
@@ -2956,7 +2976,7 @@ practical skills.</p>
 thoughts and post a quick review on Amazon!</p>
 <p>If you have feedback, I'd like to hear from you. Please email me at
 
-<a href="feedback@BitcoinHandsOn.com" rel="noopener noreferrer" target="_blank">feedback@BitcoinHandsOn.com</a>.</p>
+<a href="feedback@BitcoinHandsOn.com">feedback@BitcoinHandsOn.com</a>.</p>
 <h1 id="exercise-19-install-blue-wallet-and-create-the-carol-wallet">Exercise
 
 19: Install Blue Wallet and create the Carol wallet</h1>
@@ -2990,7 +3010,7 @@ for MacOS. We’ll use it on the phone to generate a new wallet, Carol.
 Just like Alice and Bob, Carol represents a new user of bitcoin. Then
 
 we’ll send bitcoin to Carol, and do some other exercises.</p>
-<p>Go to the website (<a href="https://bluewallet.io/" rel="noopener noreferrer" target="_blank">https://bluewallet.io/</a>). Towards the
+<p>Go to the website (<a href="https://bluewallet.io/">https://bluewallet.io/</a>). Towards the
 
 bottom there are links to install it via Google Play or the Apple App
 
@@ -3063,12 +3083,12 @@ the functionality you need for a mobile phone wallet. Like Sparrow, Blue
 
 Wallet is also open source, which means that the code is publicly
 
-available for review (<a href="https://github.com/BlueWallet/BlueWallet" rel="noopener noreferrer" target="_blank">https://github.com/BlueWallet/BlueWallet</a>).</p>
+available for review (<a href="https://github.com/BlueWallet/BlueWallet">https://github.com/BlueWallet/BlueWallet</a>).</p>
 <p>Here’s a security tip to keep in mind: Whenever you install any
 
 bitcoin related software, be very sure that the site you’re installing
 
-it from is the real one. For Sparrow, you went to the right site—<a href="https://SparrowWallet.com" rel="noopener noreferrer" target="_blank">https://SparrowWallet.com</a>.</p>
+it from is the real one. For Sparrow, you went to the right site—<a href="https://SparrowWallet.com">https://SparrowWallet.com</a>.</p>
 <p>If you’re downloading an app, make sure it’s the real thing as well.
 
 Often scammer apps will get onto the Google Play Store, or Apple App
@@ -3779,7 +3799,7 @@ Wallet, so you’ve got a good background.</p>
 
 new seed phrase. This wallet represents another bitcoin user, Dan.</p>
 <ul>
-<li><p>Install Blockstream from the Blockstream site: <a href="https://blockstream.com/green/" rel="noopener noreferrer" target="_blank">https://blockstream.com/app</a>.
+<li><p>Install Blockstream from the Blockstream site: <a href="https://blockstream.com/green/">https://blockstream.com/app</a>.
 
 There are versions both for desktop and mobile.</p></li>
 <li><p>Create a new wallet with Blockstream. Instead of the term
@@ -3979,7 +3999,7 @@ to social media mentions of bitcoin. Those searches provided the
 
 criminals with good targets, and there have been multiple attacks on
 
-bitcoiners in Sweden. (<a href="https://cointelegraph.com/news/swedish-bitcoiners-targeted-by-armed-criminals" rel="noopener noreferrer" target="_blank">https://cointelegraph.com/news/swedish-bitcoiners-targeted-by-armed-criminals</a>,
+bitcoiners in Sweden. (<a href="https://cointelegraph.com/news/swedish-bitcoiners-targeted-by-armed-criminals">https://cointelegraph.com/news/swedish-bitcoiners-targeted-by-armed-criminals</a>,
 
 retrieved 2/6/2025)</p>
 <p>Remember: good security habits are built over time. Don’t rush into
@@ -4067,7 +4087,7 @@ what kind of security and privacy considerations you need to take, as
 
 you put more of your assets into bitcoin. See what he has to say here:
 
-<a href="https://sparrowwallet.com/docs/best-practices.html" rel="noopener noreferrer" target="_blank">https://sparrowwallet.com/docs/best-practices.html</a>.</p>
+<a href="https://sparrowwallet.com/docs/best-practices.html">https://sparrowwallet.com/docs/best-practices.html</a>.</p>
 <p>Here’s some additional strategies to consider:</p>
 <p><strong>Multiple backups</strong>: If you have just one backup of
 
@@ -4256,21 +4276,21 @@ are some of the most well-known options.</p>
 <tbody>
 <tr>
 <td>SeedSigner</td>
-<td><a href="https://seedsigner.com/" rel="noopener noreferrer" target="_blank">https://seedsigner.com/</a></td>
+<td><a href="https://seedsigner.com/">https://seedsigner.com/</a></td>
 </tr>
 </tbody>
 <tbody>
 <tr>
 <td>Coldcard</td>
-<td><a href="https://coldcard.com/" rel="noopener noreferrer" target="_blank">https://coldcard.com/</a></td>
+<td><a href="https://coldcard.com/">https://coldcard.com/</a></td>
 </tr>
 <tr>
 <td>Foundation Passport</td>
-<td><a href="https://foundation.xyz" rel="noopener noreferrer" target="_blank">https://foundation.xyz</a></td>
+<td><a href="https://foundation.xyz">https://foundation.xyz</a></td>
 </tr>
 <tr>
 <td>Blockstream Jade</td>
-<td><a href="https://blockstream.com" rel="noopener noreferrer" target="_blank">https://blockstream.com</a></td>
+<td><a href="https://blockstream.com">https://blockstream.com</a></td>
 </tr>
 </tbody>
 </table>
@@ -4283,7 +4303,7 @@ purchase a fully assembled one on the SeedSigner website.</p>
 
 USB stick, or similar options. Here’s a post that has more information
 
-on that method: <a href="https://stacker.news/items/569901" rel="noopener noreferrer" target="_blank">https://stacker.news/items/569901</a>.
+on that method: <a href="https://stacker.news/items/569901">https://stacker.news/items/569901</a>.
 
 Make sure you do some research before you choose this option.</p>
 <p>I suggest that you continue to use Sparrow to manage and coordinate
@@ -4373,7 +4393,7 @@ order to find a link to write a product review.</p>
 <p>I learn so much from your feedback and comments, and continue to
 
 improve this book. Please email me at:</p>
-<p><a href="feedback@BitcoinHandsOn.com" rel="noopener noreferrer" target="_blank"><strong>feedback@BitcoinHandsOn.com</strong></a></p>
+<p><a href="feedback@BitcoinHandsOn.com"><strong>feedback@BitcoinHandsOn.com</strong></a></p>
 <h1 class="Header-1-without-numbers" id="resources">Resources</h1>
 <h3 class="NewSubheading" id="books-articles-and-videos">Books,
 
@@ -4381,7 +4401,7 @@ articles, and videos</h3>
 <p><strong>The Bullish Case for Bitcoin by Vijay Boyapati</strong></p>
 <p>Many people have been introduced to the “why” of bitcoin through one
 
-article published on Medium: <a href="https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1" rel="noopener noreferrer" target="_blank">The
+article published on Medium: <a href="https://vijayboyapati.medium.com/the-bullish-case-for-bitcoin-6ecc8bdecc1">The
 
 Bullish Case for Bitcoin</a>. It’s an inspiring introduction to Bitcoin,
 
@@ -4405,7 +4425,7 @@ the old form of money are impoverished.</p>
 <p><strong>Bitcoin University YouTube channel</strong></p>
 <p>One of the YouTube channels that I recommend for learning about
 
-Bitcoin is Bitcoin University (<a href="https://www.youtube.com/@Bitcoin_University" rel="noopener noreferrer" target="_blank">https://www.youtube.com/@Bitcoin_University</a>).
+Bitcoin is Bitcoin University (<a href="https://www.youtube.com/@Bitcoin_University">https://www.youtube.com/@Bitcoin_University</a>).
 
 The creator, Matthew Kratter has solid information on self custody as
 
@@ -4463,9 +4483,9 @@ transactions. Also, since it’s not self custody, it’s best to avoid
 storing larger amounts on them.</p>
 <p>Some of the more popular ones are:</p>
 <ul>
-<li><p>CoinOS (<a href="https://coinos.io/" rel="noopener noreferrer" target="_blank">https://coinos.io/</a>)</p></li>
-<li><p>Aqua (<a href="https://aquawallet.io/" rel="noopener noreferrer" target="_blank">https://aquawallet.io/</a>)</p></li>
-<li><p>Wallet of Satoshi (<a href="https://www.walletofsatoshi.com/" rel="noopener noreferrer" target="_blank">https://www.walletofsatoshi.com/</a>,
+<li><p>CoinOS (<a href="https://coinos.io/">https://coinos.io/</a>)</p></li>
+<li><p>Aqua (<a href="https://aquawallet.io/">https://aquawallet.io/</a>)</p></li>
+<li><p>Wallet of Satoshi (<a href="https://www.walletofsatoshi.com/">https://www.walletofsatoshi.com/</a>,
 
 not available in the US).</p></li>
 </ul>
@@ -4491,9 +4511,9 @@ research before setting up a lightning channel. Some of the more popular
 
 non-custodial apps are</p>
 <ul>
-<li><p>Zeus (<a href="https://zeusln.com/" rel="noopener noreferrer" target="_blank">https://zeusln.com/</a>)</p></li>
-<li><p>Breez (<a href="https://breez.technology/" rel="noopener noreferrer" target="_blank">https://breez.technology/</a>)</p></li>
-<li><p>Phoenix (<a href="https://phoenix.acinq.co/" rel="noopener noreferrer" target="_blank">https://phoenix.acinq.co/</a>)</p></li>
+<li><p>Zeus (<a href="https://zeusln.com/">https://zeusln.com/</a>)</p></li>
+<li><p>Breez (<a href="https://breez.technology/">https://breez.technology/</a>)</p></li>
+<li><p>Phoenix (<a href="https://phoenix.acinq.co/">https://phoenix.acinq.co/</a>)</p></li>
 </ul>
 <h3 class="NewSubheading" id="support">Support</h3>
 <p>If you need more support for any of the tools you’ve worked with, a
@@ -4503,7 +4523,7 @@ good place to go is the sites recommended on the official website. Often
 these are hosted on Telegram.</p>
 <p>For instance, if you need help with Sparrow, go to the official
 
-Sparrow website (<a href="https://sparrowwallet.com/" rel="noopener noreferrer" target="_blank">https://sparrowwallet.com/</a>), and
+Sparrow website (<a href="https://sparrowwallet.com/">https://sparrowwallet.com/</a>), and
 
 look for the Telegram link, right above the Download button. The
 
