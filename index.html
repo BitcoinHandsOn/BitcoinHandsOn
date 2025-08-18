@@ -7,7 +7,11 @@
 <title>BitcoinHandsOn_PrepForGithub</title>
 
 <html><head><style>
-        body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Noto Sans, Liberation Sans, Arial, sans-serif; font-size: 18px; line-height: 1.65; background-color: #fdfdfd; color: #212529; margin: 0; }
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Noto Sans, Liberation Sans, Arial, sans-serif;
+            font-size: 18px; line-height: 1.65; background-color: #fdfdfd; color: #212529; margin: 0;
+            overflow-wrap: break-word; /* NEW: Allow long words/URLs to break */
+        }
         .book-container { display: flex; }
         .sidebar-nav { flex: 0 0 320px; height: 100vh; position: sticky; top: 0; overflow-y: auto; background-color: #f8f9fa; border-right: 1px solid #dee2e6; padding: 1em 1.5em; }
         .sidebar-nav #TOC ul { padding-left: 1em; } .sidebar-nav #TOC > ul { padding-left: 0; } .sidebar-nav #TOC li { list-style: none; margin-bottom: 0.5em; } .sidebar-nav a { text-decoration: none; color: #0d6efd; } .sidebar-nav a:hover { text-decoration: underline; }
@@ -17,19 +21,33 @@
         .main-content > *:first-child { margin-top: 0 !important; }
         p { margin-bottom: 1.1em; } ul, ol { padding-left: 30px; margin-bottom: 1.5em; } li { margin-bottom: 0.75em; }
         a { color: #0d6efd; text-decoration: underline; }
-        table { border-collapse: collapse; width: 100%; margin: 1.5em 0 1.5em 2em; }
-        td, th { border: none; padding: 0.4em 0.5em; text-align: left; font-weight: normal; }
+        
+        /* --- NEW: Responsive Fixes for Wide Content --- */
+        img, svg {
+            max-width: 100%; /* Ensure images never overflow their container */
+            height: auto;    /* Maintain aspect ratio when width changes */
+        }
+        table {
+            display: block;          /* Allow the table to have overflow properties */
+            overflow-x: auto;      /* Add a horizontal scrollbar *to the table* if it's too wide */
+            white-space: nowrap;     /* Prevent text in cells from wrapping awkwardly */
+            border-collapse: collapse;
+            width: 100%;
+            margin: 1.5em 0; /* Removed left indent to allow full width for scrolling */
+        }
+        pre {
+            overflow-x: auto;      /* Allow pre-formatted text/code to scroll horizontally */
+        }
+        
+        td, th { border: 1px solid #dee2e6; padding: 0.5em; text-align: left; font-weight: normal; white-space: normal; } /* Added borders back for scrollable tables */
         blockquote { text-align: center; font-style: italic; font-size: 1.3em; max-width: 75%; color: #555; border: none; margin: 2em auto; }
         blockquote p { margin-bottom: 0; }
+        
         .hamburger-icon, .overlay { display: none; }
         @media (max-width: 992px) {
             .main-content { padding: 1.5em; }
             .sidebar-nav { position: fixed; top: 0; left: 0; height: 100%; z-index: 1000; background-color: #fff; width: 280px; transform: translateX(-100%); transition: transform 0.3s ease-in-out; }
-            .hamburger-icon {
-                display: block; position: fixed; top: 15px;
-                left: 15px; /* REVERTED: Placed back on the left */
-                z-index: 1001; background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px; cursor: pointer;
-            }
+            .hamburger-icon { display: block; position: fixed; top: 15px; left: 15px; z-index: 1001; background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px; cursor: pointer; }
             .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 999; }
             body.sidebar-open .sidebar-nav { transform: translateX(0); }
             body.sidebar-open .overlay { display: block; }
@@ -40,19 +58,10 @@
             const hamburger = document.querySelector('.hamburger-icon');
             const overlay = document.querySelector('.overlay');
             const sidebar = document.querySelector('.sidebar-nav');
-            
             const toggleSidebar = () => document.body.classList.toggle('sidebar-open');
-            
             if (hamburger) hamburger.addEventListener('click', toggleSidebar);
             if (overlay) overlay.addEventListener('click', toggleSidebar);
-            
-            if (sidebar) {
-                sidebar.addEventListener('click', function(event) {
-                    if (event.target.tagName === 'A') {
-                        toggleSidebar();
-                    }
-                });
-            }
+            if (sidebar) { sidebar.addEventListener('click', function(event) { if (event.target.tagName === 'A') { toggleSidebar(); } }); }
         });
     </script>
 </head></html></head>
