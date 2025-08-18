@@ -27,7 +27,7 @@
             .sidebar-nav { position: fixed; top: 0; left: 0; height: 100%; z-index: 1000; background-color: #fff; width: 280px; transform: translateX(-100%); transition: transform 0.3s ease-in-out; }
             .hamburger-icon {
                 display: block; position: fixed; top: 15px;
-                right: 15px; /* MODIFIED: Placed on the right */
+                left: 15px; /* REVERTED: Placed back on the left */
                 z-index: 1001; background: #fff; border: 1px solid #ccc; border-radius: 4px; padding: 8px; cursor: pointer;
             }
             .overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); z-index: 999; }
@@ -39,19 +39,16 @@
         document.addEventListener('DOMContentLoaded', function () {
             const hamburger = document.querySelector('.hamburger-icon');
             const overlay = document.querySelector('.overlay');
-            const sidebar = document.querySelector('.sidebar-nav'); // NEW: Select the sidebar itself
+            const sidebar = document.querySelector('.sidebar-nav');
             
             const toggleSidebar = () => document.body.classList.toggle('sidebar-open');
             
             if (hamburger) hamburger.addEventListener('click', toggleSidebar);
             if (overlay) overlay.addEventListener('click', toggleSidebar);
             
-            // NEW: Add a listener to the sidebar
             if (sidebar) {
                 sidebar.addEventListener('click', function(event) {
-                    // Check if the clicked element inside the sidebar is an anchor link
                     if (event.target.tagName === 'A') {
-                        // If it is, close the sidebar so the user can see the content
                         toggleSidebar();
                     }
                 });
