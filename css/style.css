@@ -1,340 +1,291 @@
 /* ============================================================
    Bitcoin Hands-On — site styles
-   Edit the variables below to retheme the whole site.
+   Faithful rebuild of the original Carrd design.
+   Colors and fonts are variables below; edit them to retheme.
    ============================================================ */
 
 :root {
-    --paper: #FAF8F4;        /* page background */
-    --ink: #20242C;          /* main text */
-    --slate: #5A6472;        /* secondary text */
-    --orange: #F7931A;       /* Bitcoin orange — accents, buttons */
-    --orange-deep: #C87406;  /* hover / darker accent */
-    --tint: #FDF3E3;         /* pale orange band background */
-    --line: #E5E0D6;         /* hairline borders */
+    --teal: #1ABC9C;         /* buttons */
+    --red: #F01616;          /* testimonial attributions */
+    --green: #CCE6D9;        /* highlight boxes */
+    --ink: #000000;          /* main text */
+    --hero-text: rgba(252, 250, 250, 0.969);
 
-    --font-display: "Bricolage Grotesque", system-ui, sans-serif;
-    --font-body: "Source Serif 4", Georgia, serif;
-    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+    --font-serif: 'Roboto Slab', serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                 'Helvetica Neue', Arial, sans-serif;
+    --font-accent: 'Raleway', sans-serif;
+
+    --column: 44rem;         /* main content width */
 }
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
-
-@media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
-}
+/* Base type scale matches the original: large on big screens,
+   stepping down at the same breakpoints Carrd used. */
+html { font-size: 18pt; }
+@media (max-width: 1680px) { html { font-size: 13pt; } }
+@media (max-width: 980px)  { html { font-size: 11pt; } }
 
 body {
     margin: 0;
-    background: var(--paper);
     color: var(--ink);
-    font-family: var(--font-body);
-    font-size: 1.125rem;
-    line-height: 1.65;
+    background-color: #FFFFFF;
+    background-image: url('../assets/images/bg-speckle.jpg');
+    background-attachment: fixed;
+    background-repeat: repeat;
+    font-family: var(--font-sans);
+    line-height: 1.25;
+    word-wrap: break-word;
 }
 
+.page { width: 100%; }
+
 /* ------------------------------------------------------------
-   Layout helpers
+   Sections
    ------------------------------------------------------------ */
 
-.wrap {
-    max-width: 1060px;
+.section {
+    max-width: var(--column);
     margin: 0 auto;
-    padding: 0 24px;
-}
-
-.narrow { max-width: 720px; }
-
-.section { padding: 72px 0; }
-
-/* ------------------------------------------------------------
-   Typography
-   ------------------------------------------------------------ */
-
-h1, h2, h3 {
-    font-family: var(--font-display);
-    line-height: 1.12;
-    letter-spacing: -0.01em;
-    margin: 0 0 0.6em;
-}
-
-h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); font-weight: 800; }
-h2 { font-size: clamp(1.6rem, 3.5vw, 2.3rem); font-weight: 700; }
-h3 {
-    font-size: 1.05rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    margin-top: 2.2em;
-    color: var(--orange-deep);
-}
-
-.accent { color: var(--orange-deep); }
-
-.eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    color: var(--slate);
-    margin: 0 0 1em;
-}
-
-.lede { font-size: 1.25rem; color: var(--slate); }
-
-a { color: var(--orange-deep); }
-a:hover { color: var(--orange); }
-
-/* ------------------------------------------------------------
-   Buttons
-   ------------------------------------------------------------ */
-
-.cta-row { margin-top: 2em; display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
-
-.btn {
-    display: inline-block;
-    background: var(--orange);
-    color: #fff;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.05rem;
-    text-decoration: none;
-    padding: 14px 28px;
-    border-radius: 8px;
-    box-shadow: 0 2px 0 var(--orange-deep);
-}
-
-.btn:hover {
-    background: var(--orange-deep);
-    color: #fff;
-    box-shadow: none;
-    transform: translateY(2px);
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .btn:hover { transform: none; }
-}
-
-.btn-ghost {
-    font-family: var(--font-display);
-    font-weight: 700;
-    text-decoration: none;
+    padding: 1.75rem 1.5rem;
 }
 
 /* ------------------------------------------------------------
-   Hero
+   Hero — full-width red bokeh banner
    ------------------------------------------------------------ */
 
 .hero {
-    border-bottom: 1px solid var(--line);
-    padding: 88px 0 72px;
+    background-image: url('../assets/images/hero-bokeh.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 4.5rem 1.5rem 4rem;
 }
 
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 56px;
-    align-items: center;
+.hero-title {
+    color: var(--hero-text);
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 3.25em;
+    line-height: 1.25;
+    letter-spacing: -0.075rem;
+    margin: 0 0 1.25rem;
 }
 
-.hero-cover img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
-    box-shadow: 12px 12px 0 var(--tint), 12px 12px 0 1px var(--line);
-}
+.hero-title strong { font-weight: 700; }
 
-@media (max-width: 760px) {
-    .hero { padding: 56px 0 48px; }
-    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
-    .hero-cover { max-width: 300px; margin: 0 auto; }
+.hero-subtitle {
+    color: var(--hero-text);
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 1.625em;
+    line-height: 1.25;
+    letter-spacing: 0.05rem;
+    margin: 0 0 1.75rem;
 }
 
 /* ------------------------------------------------------------
-   Quote bands (testimonials)
+   Buttons — teal pills
    ------------------------------------------------------------ */
 
-.quote-band {
-    background: var(--tint);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 56px 0;
+.button-row {
+    text-align: center;
+    margin: 1.5rem 0 0.5rem;
 }
 
-blockquote { margin: 0; }
+.button {
+    display: inline-block;
+    background-color: var(--teal);
+    color: #FFFFFF;
+    font-family: var(--font-sans);
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.5625rem;
+    text-decoration: none;
+    padding: 0.9rem 2rem;
+    border-radius: 1.75rem;
+}
 
-blockquote p {
-    font-size: 1.3rem;
-    font-style: italic;
+.button:hover { filter: brightness(1.08); }
+
+/* ------------------------------------------------------------
+   Typography roles (named after their job on the page)
+   ------------------------------------------------------------ */
+
+/* Big centered serif statement under the hero */
+.lead {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 2.75em;
+    line-height: 1.25;
+    letter-spacing: 0.025rem;
+    text-align: center;
+    margin: 1.5rem 0;
+}
+
+/* Large centered serif section statements */
+.statement {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 2.75em;
+    line-height: 1.125;
+    letter-spacing: 0.025rem;
+    text-align: center;
+    margin: 0 0 1.5rem;
+}
+
+/* Bold centered serif subhead */
+.subhead-bold {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 1.375;
+    letter-spacing: 0.025rem;
+    text-align: center;
+    margin: 0 0 1.5rem;
+}
+
+/* Centered serif section headings (FAQ, Resources) */
+.section-heading {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 2.75em;
+    line-height: 1.375;
+    letter-spacing: 0.025rem;
+    text-align: center;
+    margin: 0 0 1.5rem;
+}
+
+.section-heading-bold { font-weight: 700; }
+
+/* Standard body paragraphs */
+.body-text {
+    font-size: 1.25em;
+    line-height: 1.25;
+    letter-spacing: 0.025rem;
+    margin: 0 0 1.2em;
+}
+
+/* Slightly larger body variant */
+.body-text-lg {
+    font-size: 1.375em;
+    line-height: 1.25;
+    letter-spacing: 0.025rem;
+    margin: 0 0 1.2em;
+}
+
+/* ------------------------------------------------------------
+   Dividers — thin black rules
+   ------------------------------------------------------------ */
+
+.divider {
+    border: 0;
+    height: 1px;
+    background-color: var(--ink);
+    margin: 1.5rem auto;
+    width: 100%;
+}
+
+/* ------------------------------------------------------------
+   Book cover
+   ------------------------------------------------------------ */
+
+.cover-section { text-align: center; }
+
+.cover {
+    max-width: 20rem;
+    width: 100%;
+    height: auto;
+}
+
+/* ------------------------------------------------------------
+   Bulleted lists
+   ------------------------------------------------------------ */
+
+.bullet-list {
+    list-style: disc;
+    font-size: 1.25em;
+    line-height: 1.75;
+    letter-spacing: 0.025rem;
+    margin: 0 0 1.2em;
+    padding-left: 1.5em;
+}
+
+.bullet-list li { margin-bottom: 0.4em; }
+
+.faq-list li { margin-bottom: 1.1em; }
+
+/* ------------------------------------------------------------
+   Green highlight boxes
+   ------------------------------------------------------------ */
+
+.green-box {
+    background-color: var(--green);
+    padding: 2.25rem 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ------------------------------------------------------------
+   Testimonials — flanked by big quote marks
+   ------------------------------------------------------------ */
+
+.testimonial { padding-top: 1rem; padding-bottom: 1rem; }
+
+.quote-mark {
+    display: block;
+    width: 3.4rem;
+    height: auto;
+    margin-bottom: 0.75rem;
+}
+
+.quote-mark-close {
+    margin-left: auto;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+}
+
+.quote-text {
+    font-size: 1.375em;
+    line-height: 1.5;
+    letter-spacing: 0.025rem;
     margin: 0 0 0.8em;
 }
 
-blockquote .stars {
-    font-style: normal;
-    font-size: 1.1rem;
-    color: var(--orange);
-    letter-spacing: 0.2em;
-    margin-bottom: 1em;
+.attribution {
+    color: var(--red);
+    font-family: var(--font-accent);
+    font-weight: 300;
+    font-size: 1.25em;
+    line-height: 2.125;
+    letter-spacing: 0.025rem;
+    margin: 0;
 }
-
-blockquote cite {
-    font-family: var(--font-mono);
-    font-style: normal;
-    font-size: 0.85rem;
-    color: var(--slate);
-}
-
-/* ------------------------------------------------------------
-   Exercise ledger (signature element)
-   ------------------------------------------------------------ */
-
-.ledger {
-    list-style: none;
-    counter-reset: exercise;
-    margin: 2em 0;
-    padding: 0;
-    border-top: 1px solid var(--line);
-}
-
-.ledger li {
-    counter-increment: exercise;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 14px 4px;
-    border-bottom: 1px solid var(--line);
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 1.1rem;
-}
-
-.ledger li::before {
-    content: "EX " counter(exercise, decimal-leading-zero);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    color: var(--slate);
-    letter-spacing: 0.1em;
-    min-width: 3.4em;
-}
-
-.ledger .check {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-    border: 2px solid var(--orange);
-    border-radius: 4px;
-    position: relative;
-}
-
-.ledger .check::after {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 1px;
-    width: 5px;
-    height: 10px;
-    border-right: 2.5px solid var(--orange);
-    border-bottom: 2.5px solid var(--orange);
-    transform: rotate(40deg);
-}
-
-/* ------------------------------------------------------------
-   Who it's for
-   ------------------------------------------------------------ */
-
-.fit-list {
-    padding-left: 0;
-    list-style: none;
-}
-
-.fit-list li {
-    padding: 10px 0 10px 34px;
-    position: relative;
-}
-
-.fit-list li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: var(--orange);
-    font-family: var(--font-display);
-    font-weight: 700;
-}
-
-/* ------------------------------------------------------------
-   FAQ (native accordions)
-   ------------------------------------------------------------ */
-
-details {
-    border-bottom: 1px solid var(--line);
-    padding: 4px 0;
-}
-
-details summary {
-    cursor: pointer;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.1rem;
-    padding: 14px 0;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 16px;
-}
-
-details summary::-webkit-details-marker { display: none; }
-
-details summary::after {
-    content: "+";
-    font-family: var(--font-mono);
-    color: var(--orange);
-    font-size: 1.3rem;
-    flex-shrink: 0;
-}
-
-details[open] summary::after { content: "–"; }
-
-details > p { margin: 0 0 1.2em; color: var(--slate); }
 
 /* ------------------------------------------------------------
    Resources
    ------------------------------------------------------------ */
 
-.resources dl { margin: 0; }
-
-.resources dt {
-    font-family: var(--font-display);
-    font-weight: 700;
-    margin-top: 1.4em;
+.resource-head {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 2.25em;
+    line-height: 1.375;
+    letter-spacing: 0.025rem;
+    margin: 1.5rem 0 1rem;
 }
 
-.resources dd {
-    margin: 0.3em 0 0;
-    color: var(--slate);
-    font-size: 1.02rem;
-}
-
-/* ------------------------------------------------------------
-   Footer
-   ------------------------------------------------------------ */
-
-.footer {
-    border-top: 1px solid var(--line);
-    padding: 40px 0;
-    font-size: 0.95rem;
-    color: var(--slate);
+.resource-entry {
+    font-family: var(--font-serif);
+    font-size: 1em;
+    line-height: 1.375;
+    letter-spacing: 0.025rem;
+    margin: 0 0 1.4em;
 }
 
 /* ------------------------------------------------------------
-   Focus visibility
+   Links
    ------------------------------------------------------------ */
 
-a:focus-visible,
-summary:focus-visible {
-    outline: 3px solid var(--orange);
-    outline-offset: 3px;
-    border-radius: 4px;
-}
+a { color: inherit; }

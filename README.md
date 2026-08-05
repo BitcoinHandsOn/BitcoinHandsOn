@@ -12,7 +12,7 @@ Static site for the book *Bitcoin Hands-On*. No build step, no JavaScript, no de
 
 ## Before first deploy
 
-1. Add the book cover: save it from your Carrd export (image01.jpg) or from the live
+(Images are already included.)
    site, and place it at `assets/images/cover.jpg`.
 2. Optionally add `assets/images/card.jpg` (the social share image) the same way.
 
