@@ -73,7 +73,7 @@ body {
     font-size: 3.25em;
     line-height: 1.25;
     letter-spacing: -0.075rem;
-    margin: 0 0 1.5rem;
+    margin: 0 0 0.625rem;
 }
 
 .hero-title strong { font-weight: 700; }
@@ -97,7 +97,7 @@ body {
     margin: 1.5rem 0 0.5rem;
 }
 
-.hero .button-row { margin: 1.5rem 0 0; }
+.hero .button-row { margin: 2.5rem 0 0; }
 
 .button {
     display: inline-block;
@@ -289,11 +289,8 @@ body {
     flex-shrink: 0;
 }
 
-.quote-mark:last-child { align-self: flex-end; }
-
 @media (max-width: 736px) {
-    .testimonial-card { flex-direction: column; align-items: flex-start; }
-    .quote-mark:last-child { align-self: flex-end; }
+    .testimonial-card { flex-direction: column; align-items: center; }
 }
 
 .quote-text {
@@ -345,7 +342,7 @@ a { color: inherit; }
    ------------------------------------------------------------ */
 
 .hero-inner {
-    max-width: 58rem;
+    max-width: 51.1rem;   /* matches original: subtitle wraps after "Using" */
     margin: 0 auto;
 }
 
