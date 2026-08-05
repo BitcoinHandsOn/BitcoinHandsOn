@@ -39,16 +39,19 @@ body {
     word-wrap: break-word;
 }
 
-.page { width: 100%; }
+.page {
+    max-width: 58rem;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 1.75rem 3.85rem;
+}
 
 /* ------------------------------------------------------------
    Sections
    ------------------------------------------------------------ */
 
 .section {
-    max-width: var(--column);
-    margin: 0 auto;
-    padding: 1.75rem 1.5rem;
+    padding: 0.4rem 0;
 }
 
 /* ------------------------------------------------------------
@@ -60,7 +63,7 @@ body {
     background-size: cover;
     background-position: center;
     text-align: center;
-    padding: 4.5rem 1.5rem 4rem;
+    padding: 1.75rem 1.75rem;
 }
 
 .hero-title {
@@ -70,7 +73,7 @@ body {
     font-size: 3.25em;
     line-height: 1.25;
     letter-spacing: -0.075rem;
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.5rem;
 }
 
 .hero-title strong { font-weight: 700; }
@@ -82,7 +85,7 @@ body {
     font-size: 1.625em;
     line-height: 1.25;
     letter-spacing: 0.05rem;
-    margin: 0 0 1.75rem;
+    margin: 0;
 }
 
 /* ------------------------------------------------------------
@@ -93,6 +96,8 @@ body {
     text-align: center;
     margin: 1.5rem 0 0.5rem;
 }
+
+.hero .button-row { margin: 1.5rem 0 0; }
 
 .button {
     display: inline-block;
@@ -164,7 +169,7 @@ body {
     font-size: 1.25em;
     line-height: 1.25;
     letter-spacing: 0.025rem;
-    margin: 0 0 1.2em;
+    margin: 0 0 0.625rem;
 }
 
 /* Slightly larger body variant */
@@ -172,7 +177,7 @@ body {
     font-size: 1.375em;
     line-height: 1.25;
     letter-spacing: 0.025rem;
-    margin: 0 0 1.2em;
+    margin: 0 0 0.625rem;
 }
 
 /* ------------------------------------------------------------
@@ -204,15 +209,32 @@ body {
    ------------------------------------------------------------ */
 
 .bullet-list {
-    list-style: disc;
+    list-style: none;
     font-size: 1.25em;
     line-height: 1.75;
     letter-spacing: 0.025rem;
-    margin: 0 0 1.2em;
-    padding-left: 1.5em;
+    margin: 0 0 0.75rem;
+    padding-left: 0;
 }
 
-.bullet-list li { margin-bottom: 0.4em; }
+.bullet-list li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.4em;
+}
+
+.bullet-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0.85em;
+    height: 1.75em;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2040%2040%22%3E%3Cpath%20d%3D%22M39.4%2C11.2c0%2C.4-.2%2C.7-.5%2C1l-22.8%2C22.8c-.2%2C.2-.6%2C.6-1.1%2C.6h0c-.5%2C0-.8-.2-.9-.4h-.1c0-.1-12.8-12.9-12.8-12.9-.6-.6-.5-1.6.1-2.4h0c0-.1%2C2.4-2.5%2C2.4-2.5.5-.5%2C1.1-.7%2C1.6-.7.4%2C0%2C.7.2%2C1%2C.5l8.8%2C8.7L33.8%2C7c.6-.6%2C1.6-.5%2C2.4%2C0h.1c0%2C.1%2C2.5%2C2.5%2C2.5%2C2.5.3.3.5.6.5%2C1Z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: left 60%;
+    background-size: contain;
+}
 
 .faq-list li { margin-bottom: 1.1em; }
 
@@ -222,28 +244,56 @@ body {
 
 .green-box {
     background-color: var(--green);
-    padding: 2.25rem 2rem;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    padding: 1.75rem;
+    margin: 1rem 0;
 }
 
 /* ------------------------------------------------------------
-   Testimonials — flanked by big quote marks
+   Gradient highlight box ("These exercises...")
    ------------------------------------------------------------ */
 
-.testimonial { padding-top: 1rem; padding-bottom: 1rem; }
+.gradient-box {
+    background-image: linear-gradient(45deg, #8ED674 0%, #918AC2 60%);
+    padding: 2.75rem 3.85rem;
+    margin: 1rem -3.85rem;   /* full-bleed across the white column */
+}
+
+@media (max-width: 736px) {
+    .gradient-box { padding: 2rem 1.75rem; margin: 1rem -1.75rem; }
+}
+
+/* ------------------------------------------------------------
+   Testimonials — bordered cards flanked by big quote marks
+   ------------------------------------------------------------ */
+
+.testimonial-card {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    border: 12px solid rgba(227, 225, 225, 0.961);
+    background-color: #FFFFFF;
+    padding: 3rem 3rem;
+    margin: 1.625rem 0;
+}
+
+.testimonial-body {
+    flex: 1;
+    max-width: 27rem;
+    margin: 0 auto;
+}
 
 .quote-mark {
     display: block;
-    width: 3.4rem;
+    width: 3rem;
     height: auto;
-    margin-bottom: 0.75rem;
+    flex-shrink: 0;
 }
 
-.quote-mark-close {
-    margin-left: auto;
-    margin-bottom: 0;
-    margin-top: 0.5rem;
+.quote-mark:last-child { align-self: flex-end; }
+
+@media (max-width: 736px) {
+    .testimonial-card { flex-direction: column; align-items: flex-start; }
+    .quote-mark:last-child { align-self: flex-end; }
 }
 
 .quote-text {
@@ -289,3 +339,34 @@ body {
    ------------------------------------------------------------ */
 
 a { color: inherit; }
+
+/* ------------------------------------------------------------
+   Hero content width (matches the main column)
+   ------------------------------------------------------------ */
+
+.hero-inner {
+    max-width: 58rem;
+    margin: 0 auto;
+}
+
+/* ------------------------------------------------------------
+   Two-column: problem text beside the book cover
+   ------------------------------------------------------------ */
+
+.two-col {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.two-col-text { flex: 1.4; }
+
+.two-col-cover {
+    flex: 1;
+    display: block;
+}
+
+@media (max-width: 736px) {
+    .two-col { flex-direction: column; align-items: center; }
+    .two-col-cover { max-width: 20rem; }
+}
